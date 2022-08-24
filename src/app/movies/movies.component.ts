@@ -8,7 +8,7 @@ import { MovieRepository } from '../models/movie.repository';
   styleUrls: ['./movies.component.css']
 })
 export class MoviesComponent implements OnInit {
-
+  title="hello title";
   movies:Movie[];
   movieRepository:MovieRepository;
   constructor() {
