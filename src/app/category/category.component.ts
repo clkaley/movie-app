@@ -11,5 +11,6 @@ export class CategoryComponent implements OnInit {
 
   ngOnInit(): void {
   }
+  categories=["macera","romantik","bilim kurgu","komedi"]
 
 }
