@@ -1,8 +1,10 @@
 import { Movie } from "./movie";
-
+//! metod tanımlama vb işler için yapılır
 export class MovieRepository{
+    //!private üye tanımlanıyor sadece sınıftan ulaşılsın
     private movies:Movie[]
 
+    //!bilgi akatarımı yapıyoruz burda da
     constructor(){
         this.movies=[
             {
@@ -32,6 +34,7 @@ export class MovieRepository{
           ];
     }
 
+    //! burda da metotlar oluşturuldu.
     getMovies(): Movie[]{
         return this.movies;
     }
