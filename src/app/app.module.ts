@@ -5,14 +5,14 @@ import { AppComponent } from './app.component';
 import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
-  declarations: [
+  declarations: [ //!component
     AppComponent,
     NavbarComponent
   ],
-  imports: [
+  imports: [ //!module
     BrowserModule
   ],
-  providers: [],
-  bootstrap: [AppComponent]
+  providers: [], //!services
+  bootstrap: [AppComponent] //!starter component
 })
 export class AppModule { }
