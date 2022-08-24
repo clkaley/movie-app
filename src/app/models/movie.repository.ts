@@ -11,25 +11,29 @@ export class MovieRepository{
               id:1,
               title:"Film 1",
               description:"Film 1 desc",
-              imageUrl:"1.jpeg"
+              imageUrl:"1.jpeg",
+              isPopular:false,
             },
             {
               id:2,
               title:"Film 2",
               description:"Film 2 desc",
-              imageUrl:"2.jpeg"
+              imageUrl:"2.jpeg",
+              isPopular:true,
             },
             {
               id:3,
               title:"Film 3",
               description:"Film 3 desc",
-              imageUrl:"3.jpeg"
+              imageUrl:"3.jpeg",
+              isPopular:true,
             },
             {
               id:4,
               title:"Film 4",
               description:"Film 4 desc",
-              imageUrl:"4.jpeg"
+              imageUrl:"4.jpeg",
+              isPopular:false,
             },
           ];
     }
@@ -39,7 +43,13 @@ export class MovieRepository{
         return this.movies;
     }
 
+    getPopularMovies():Movie[]{
+      return this.movies.filter(i=>i.isPopular);
+    }
+
     getMovieById(id:number):Movie {
         return this.movies.find(i=>i.id==id);
     }
+
+   
 }
