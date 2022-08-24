@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Movie } from '../models/movie';
+import { MovieRepository } from '../models/movie.repository';
 
 @Component({
   selector: 'app-movies',
@@ -7,37 +9,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MoviesComponent implements OnInit {
 
-  constructor() { }
+  movies:Movie[];
+  movieRepository:MovieRepository;
+  constructor() {
+    this.movieRepository=new MovieRepository();
+    this.movies=this.movieRepository.getMovies();
+   }
 
   ngOnInit(): void {
   }
 
   // movies=["Film 1 ","Film 2","Film 3","Film 4"]
-  movies=[
-    {
-      id:1,
-      title:"Film 1",
-      description:"Film 1 desc",
-      imageUrl:"1.jpeg"
-    },
-    {
-      id:2,
-      title:"Film 2",
-      description:"Film 2 desc",
-      imageUrl:"2.jpeg"
-    },
-    {
-      id:3,
-      title:"Film 3",
-      description:"Film 3 desc",
-      imageUrl:"3.jpeg"
-    },
-    {
-      id:4,
-      title:"Film 4",
-      description:"Film 4 desc",
-      imageUrl:"4.jpeg"
-    },
-  ]
+ 
+
 
 }
