@@ -184,3 +184,43 @@ TR395,00
 
 ardından localize paketi indirilir
 Terminale -> ng add @angular/localize
+
+
+### Custom Pipes
+Biz bu projede description için pipe oluşturucaz. Neden eğer description alanı istediğimizden uzunsa diye
+
+Terminalden ekleyebiliriz -> ng g pipe pipe-ismi
+ve bu app.module.ts içindeki declarations kısmına eklenir.
+
+Ama kendimiz oluşturmak istiyor isek: app folder ın altına pipes isimli folder create edilir.
+Ardından bu folder a oluşturucağımız pipe ismi verilir.
+summary.pipe.ts
+
+```
+<!-- Pipe olduğu belli eden şey angulardan import edilir. -->
+import { Pipe } from "@angular/core";
+export class SummaryPipe{
+}
+```
+
+```
+import { Pipe, PipeTransform } from "@angular/core";
+
+@Pipe({
+    name:'summary'
+})
+
+export class SummaryPipe implements PipeTransform{
+    //! description bizim string olduğu için
+    transform(value:string,limit?:number){
+        if(!value) return null;
+
+        limit=limit? limit:20;
+        if(limit>value.length){
+            return value
+        }
+        return value.substring(0,limit)+'...';
+    }
+}
+
+```
