@@ -100,7 +100,7 @@ CurrencyPipe gibi çeşitleri mevcuttur.
 - samsung s20
 - Samsung S20
 
-* Date Pipe
+1. Date Pipe
 
 movies.component.ts
 ``` 
@@ -124,7 +124,7 @@ movies.component.html
 - 25.08.2022
 
 
-* Decimal Pipe
+2. Decimal Pipe
 
 ```
 <h4>Decimal Pipe</h4>
@@ -137,7 +137,7 @@ movies.component.html
 - 0.002,5454859
 
 
-* Currency Pipe
+3. Currency Pipe
 
 ```
 <h4>Currency Pipe</h4>
@@ -152,7 +152,7 @@ movies.component.html
 - TR395,00
 
 
-* Percent Pipe
+4. Percent Pipe
 
 ```
 <h4>Percent Pipe</h4>
