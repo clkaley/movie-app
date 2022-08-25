@@ -1,23 +1,24 @@
 # Movie App
 
 
-### Componentler oluşturuldu
-cmd ye -> ng g c 'component ismi'
+##### Componentler oluşturuldu.
+cmd ye
 
-### Tüm componnetler app.componnet.html içine yazıldı
+> ng g c 'component ismi'
 
-###  Tüm componentler kendi içerisinde özelleştirildi.
 
-### Binding işlemi gerçekleştirildi.
+##### Tüm componentler app.componnet.html içine yazıldı.
+
+#####  Tüm componentler kendi içerisinde özelleştirildi.
+
+##### Binding işlemi gerçekleştirildi.
 
 data.component.ts içinde tanımladığım bir değişken
-
 ```
  title:string = "Deneme";
 ```
 
 data.component.html
-
 ```
 <h2> Title: </h2> 
 {{title}}
@@ -25,8 +26,7 @@ Change Title : <input [(ngModel)]="title" type="text" class="form-control"/>
 ```
 
 
-### Modeller oluşturuldu. Bunun için bir Model Folder Açıldı. Bu iki çeşit oluşturulabilirdi 1. Class şeklinde 2. ise Interface şeklinde olabilir.
-Burda interface şeklinde tanımlandı
+##### Modeller oluşturuldu. Bunun için bir Model Folder Açıldı. Bu iki çeşit oluşturulabilirdi 1. Class şeklinde 2. ise Interface şeklinde olabilir. Burda interface şeklinde tanımlandı
 
 
 category.ts
@@ -36,15 +36,14 @@ export interface Category{
     name:string;
 }
 ```
-Bu işlemden sonra repolar oluştruldu uygulamada kullanılacak fonksiyonlar burada tanımlandı 
 
+Bu işlemden sonra repolar oluştruldu uygulamada kullanılacak fonksiyonlar burada tanımlandı 
 category.repository.ts
  ```
 import { Category } from "./category";
 
 export class CategoryRepository{
     private categories:Category[];
-
     constructor (){
         this.categories=[
             {
@@ -72,21 +71,21 @@ export class CategoryRepository{
 }
  ```
 
+##### Template eklendi bu kısmı tam anlamadım açıklayabileceğimi düşünmüyorum ama mantık şu bir component i birden fazla şekilde kullanabiliriz.
 
-Template eklendi bu kısmı tam analamdım açıklayabileceğimi düşünmüyorum ama mantık şu bir component i birden fazla şekilde kullanabiliriz.
-
-### Pipes
+##### Pipes
 DatePipe
 UpperCasePipe
 LowerCasePipe
 CurrencyPipe gibi çeşitleri mevcuttur. 
 
-{{ value_expression | uppercase }}`
+```
+{{ value_expression | uppercase }}
+```
 
 ```
    <h2 class="card-title">{{item.title | uppercase }}</h2>
 ```
-
 
 ```
 <h4>lower upper-title pipe</h4>
@@ -95,11 +94,11 @@ CurrencyPipe gibi çeşitleri mevcuttur.
 <p>{{'Samsung S20' | lowercase }}</p>
 <p>{{'Samsung S20' | titlecase}}</p>
 ```
-Çıktıları şu şekildedir.
-Samsung S20
-SAMSUNG S20
-samsung s20
-Samsung S20
+Çıktıları şu şekildedir:
+- Samsung S20
+- SAMSUNG S20
+- samsung s20
+- Samsung S20
 
 * Date Pipe
 
@@ -118,11 +117,11 @@ movies.component.html
 <p>{{today | date:'medium'}}</p>
 
 ```
-Çıktılar 
-Thu Aug 25 2022 12:27:39 GMT+0300 (GMT+03:00)
-25 Ağu 2022
-25 Ağustos 2022 Perşembe
-25.08.2022
+Çıktılar şu şekildedir:
+- Thu Aug 25 2022 12:27:39 GMT+0300 (GMT+03:00)
+- 25 Ağu 2022
+- 25 Ağustos 2022 Perşembe
+- 25.08.2022
 
 
 * Decimal Pipe
@@ -133,10 +132,9 @@ Thu Aug 25 2022 12:27:39 GMT+0300 (GMT+03:00)
 <p>{{2.5454858545 | number: '4.0-7'}}</p>
 ```
 
-Çıktılar
-
-2,545
-0.002,5454859
+Çıktılar şu şekildedir:
+- 2,545
+- 0.002,5454859
 
 
 * Currency Pipe
@@ -148,11 +146,10 @@ Thu Aug 25 2022 12:27:39 GMT+0300 (GMT+03:00)
 <p>{{395 | currency:"TR"}}</p>
 ```
 
-Çıktılar
-
-$395,00
-€395,00
-TR395,00
+Çıktılar şu şekildedir:
+- $395,00
+- €395,00
+- TR395,00
 
 
 * Percent Pipe
@@ -165,12 +162,11 @@ TR395,00
 <p>{{1.259 | percent:"2.2-4"}}</p>
 ```
 
-Çıktılar
-
-0.259
-%26
-%3
-%125,90
+Çıktılar şu şekildedir:
+- 0.259
+- %26
+- %3
+- %125,90
 
 
 
@@ -183,10 +179,11 @@ TR395,00
 ```
 
 ardından localize paketi indirilir
-Terminale -> ng add @angular/localize
+Terminale -> 
+> ng add @angular/localize
 
 
-### Custom Pipes
+##### Custom Pipes
 Biz bu projede description için pipe oluşturucaz. Neden eğer description alanı istediğimizden uzunsa diye
 
 Terminalden ekleyebiliriz -> ng g pipe pipe-ismi
