@@ -224,3 +224,62 @@ export class SummaryPipe implements PipeTransform{
 }
 
 ```
+
+* Filtreleme İşlemi için two way binding ardından pipe işlemi
+[(ngModel)]="expression"
+
+movies.component.html
+```
+  <div class="mb-3">
+        <input 
+        [(ngModel)]="filterText"
+        type="text" class="form-control" placeholder="Searching...">
+    </div>
+```
+
+```
+filterText:string="deneme"
+```
+
+bind işlemi oldu mu olmadı mı onun kontrolü
+
+![Ekran Görüntüsü (517)](https://user-images.githubusercontent.com/74673470/186638437-4ab7cd7a-67ec-41b6-b936-25da7bd249f8.png)
+
+
+bu sefer pipe ı otomatik oluşturduk
+Terminal'e ->ng g pipe pipes/movie-filter şeklinde oluşturduk.
+
+
+```
+import { Pipe, PipeTransform } from '@angular/core';
+import { Movie } from '../models/movie';
+
+@Pipe({
+  name: 'movieFilter'
+})
+export class MovieFilterPipe implements PipeTransform {
+
+  transform(movies:Movie[],filterText:string): Movie[] {
+    filterText=filterText.toLowerCase();
+    console.log("filterText",filterText);
+    console.log("movies",movies);
+    return movies;
+  }
+}
+```
+
+
+```
+  <div class="card mb-3" *ngFor="let item of movies | movieFilter:filterText">
+```
+
+
+```
+ transform(movies:Movie[],filterText:string): Movie[] {
+    filterText=filterText.toLowerCase();
+    console.log("filterText",filterText);
+    console.log("movies",movies);
+<!-- hem title hem description a göre filtreleme işlemi yapıldı -->
+    return filterText? movies.filter((m:Movie)=>m.title.toLowerCase().indexOf(filterText)!== -1 || m.description.toLowerCase().indexOf(filterText)!== -1): movies;
+  }
+```
