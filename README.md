@@ -1,17 +1,17 @@
 # Movie App
 
 
-##### Componentler oluşturuldu.
+#### Componentler oluşturuldu.
 cmd ye
 
 > ng g c 'component ismi'
 
 
-##### Tüm componentler app.componnet.html içine yazıldı.
+#### Tüm componentler app.componnet.html içine yazıldı.
 
-#####  Tüm componentler kendi içerisinde özelleştirildi.
+####  Tüm componentler kendi içerisinde özelleştirildi.
 
-##### Binding işlemi gerçekleştirildi.
+#### Binding işlemi gerçekleştirildi.
 
 data.component.ts içinde tanımladığım bir değişken
 ```
@@ -26,7 +26,7 @@ Change Title : <input [(ngModel)]="title" type="text" class="form-control"/>
 ```
 
 
-##### Modeller oluşturuldu. Bunun için bir Model Folder Açıldı. Bu iki çeşit oluşturulabilirdi 1. Class şeklinde 2. ise Interface şeklinde olabilir. Burda interface şeklinde tanımlandı
+#### Modeller oluşturuldu. Bunun için bir Model Folder Açıldı. Bu iki çeşit oluşturulabilirdi 1. Class şeklinde 2. ise Interface şeklinde olabilir. Burda interface şeklinde tanımlandı
 
 
 category.ts
@@ -71,9 +71,9 @@ export class CategoryRepository{
 }
  ```
 
-##### Template eklendi bu kısmı tam anlamadım açıklayabileceğimi düşünmüyorum ama mantık şu bir component i birden fazla şekilde kullanabiliriz.
+#### Template eklendi bu kısmı tam anlamadım açıklayabileceğimi düşünmüyorum ama mantık şu bir component i birden fazla şekilde kullanabiliriz.
 
-##### Pipes
+#### Pipes
 DatePipe
 UpperCasePipe
 LowerCasePipe
@@ -183,7 +183,7 @@ Terminale ->
 > ng add @angular/localize
 
 
-##### Custom Pipes
+#### Custom Pipes
 Biz bu projede description için pipe oluşturucaz. Neden eğer description alanı istediğimizden uzunsa diye
 
 Terminalden ekleyebiliriz -> ng g pipe pipe-ismi
