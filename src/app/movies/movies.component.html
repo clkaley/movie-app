@@ -1,11 +1,12 @@
 <div *ngIf="movies.length>0; else no_movies">
     <div class="alert alert-info" *ngIf="movies.length>0">
-        {{movies.length}} Film Bulundu
+        {{filteredMovies.length}} Film Bulundu
     </div>
 
     <div class="mb-3">
         <input 
         [(ngModel)]="filterText"
+        (ngModelChange)="onInputChange()"
         type="text" class="form-control" placeholder="Searching...">
         <small class="text-muted" *ngIf="filterText">Aradığınız kelime: {{filterText}}</small>
     </div>
@@ -23,7 +24,7 @@
 
 
 <ng-template #movieList1>
-        <div class="card mb-3" *ngFor="let item of movies | movieFilter:filterText">
+        <div class="card mb-3" *ngFor="let item of filteredMovies">
             <div class="row">
                 <div class="col-md-3">
                     <img src="assets/img/{{item.imageUrl}}" alt="" class="img-fluid rounded-start">
