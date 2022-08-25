@@ -280,3 +280,55 @@ export class MovieFilterPipe implements PipeTransform {
     return filterText? movies.filter((m:Movie)=>m.title.toLowerCase().indexOf(filterText)!== -1 || m.description.toLowerCase().indexOf(filterText)!== -1): movies;
   }
 ```
+
+#### Events
+Pipe ile yaptığımız filtreleme işlemini event ile yapabiliriz.
+Eventler () arasına yazılır.
+
+bunu inputun içine yazdık event olarak :)
+```
+ (ngModelChange)="onInputChange()"
+```
+
+```
+ filteredMovies:Movie[];
+ this.filteredMovies=this.movies;
+  onInputChange(){
+    console.log("onInputChange",this.filterText);
+    this.filteredMovies=this.filterText?
+    this.movies.filter
+    (m=>m.title.toLowerCase().indexOf(this.filterText)!==-1 || 
+        m.description.toLowerCase().indexOf(this.filterText)!==-1) : this.movies
+  }
+```
+
+Ekstra bir butona click eventi ekleme
+
+component.html
+```
+ <button 
+   (click)="addToList()" 
+            class="btn btn-sm btn-outline-danger">Add List</button>
+```
+
+component.ts
+```
+ addToList(){
+    console.log("butona basıldı"); 
+  }
+```
+
+
+component.ts
+```
+  addToList(movie:Movie){
+    console.log("butona basıldı",movie.title); 
+  }
+```
+
+component.html
+```
+ <button 
+ <!-- item bir filme karşılık geliyo ordaki döngüler aslında -->
+     (click)="addToList(item)" class="btn btn-sm btn-dark">Add List</button>
+```
