@@ -11,7 +11,7 @@ export class MoviesComponent implements OnInit {
   title="hello title";
   movies:Movie[];
   popularMovies:Movie[];
-
+  today=new Date();
   movieRepository:MovieRepository;
   constructor() {
     this.movieRepository=new MovieRepository();
