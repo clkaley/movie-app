@@ -32,6 +32,21 @@ export class MoviesComponent implements OnInit {
         m.description.toLowerCase().indexOf(this.filterText)!==-1) : this.movies
   }
 
+  addToList($event:any,movie:Movie){
+    console.log("butona basıldı",movie.title); 
+    console.log($event.target.classList);
+    if($event.target.classList.contains('btn-dark')){
+      $event.target.innerText="Remove List"
+      $event.target.classList.remove('btn-dark')
+      $event.target.classList.add('btn-danger');
+    }else{
+      $event.target.innerText="Add List"
+      $event.target.classList.remove('btn-danger')
+      $event.target.classList.add('btn-dark')
+    }
+    
+  }
+
   // movies=["Film 1 ","Film 2","Film 3","Film 4"]
  
 

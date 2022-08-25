@@ -34,7 +34,13 @@
                         <h2 class="card-title">{{item.title | titlecase }}</h2>
                         <p class="card-text">{{item.description | summary: 20}}</p>
                         <p class="card-text">{{item.datePublished | date  }}</p>
-                    <button class="btn btn-sm btn-outline-dark">Details</button>
+                        <div>
+                            <button class="btn btn-sm mx-2 btn-outline-dark">Details</button>
+                            <button 
+                            (click)="addToList($event, item)"
+                            class="btn btn-sm btn-dark">Add List</button>
+                        </div>
+                 
                     </div>
                 </div>
             </div>
