@@ -1,5 +1,16 @@
 <div class="list-group " >
-    <a href="" *ngFor="let item of categories"class="list-group-item list-group-item-action">
+    <a 
+    (click)="selectCategory()"
+    [class.active]="displayAll"
+    class="list-group-item list-group-item-action">
+     All Category
+    </a>
+
+    <a 
+    href="#"
+    [class.active]="!displayAll &&selectedCategory.id==item.id"
+    (click)="selectCategory(item)"
+    *ngFor="let item of categories"class="list-group-item list-group-item-action">
       {{ item.name}}
     </a>
 </div>
